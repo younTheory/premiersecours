@@ -1,5 +1,6 @@
 <?php $__env->startSection('content'); ?>
     <h2> Voici tous les utilisateurs </h2>
+    <td><a class="btn btn-primary" href="<?php echo e(route('user.create')); ?>">Créer un nouvel utilisateur</a></td>
     <table class="table table-striped">
         <thead>
             <tr class="info">

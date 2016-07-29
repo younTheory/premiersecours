@@ -1,11 +1,5 @@
 @extends("default")
 @section('content')
-    <h1 > GG pour ton poste</h1>
-   <p>
-       Voici les informations de l'article publié : </br></br>
+    <h2 > Vous avez bien créer l'utilisateur {{ $nom }}</h2>
 
-        titre : {{ $post->titre }}</br>
-       description : {{ $post->description }}
-
-   </p>
 @stop

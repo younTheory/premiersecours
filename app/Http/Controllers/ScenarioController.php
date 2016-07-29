@@ -117,14 +117,20 @@ class ScenarioController extends Controller
     public function score(){
 
         $id_etape = \Session::get('id_etape');
-        $etape = Etape::findorFail($id_etape);
-        $points = Etape::Points($etape->no_etape, $etape->scenario_id)->sum('points');
+        if ($id_etape == 0)
+        {
+            $points = 0;
+        }
+        else {
+            $etape = Etape::findorFail($id_etape);
+            $points = Etape::Points($etape->no_etape, $etape->scenario_id)->sum('points');
 
-        $id_user = auth::user()->id;
-        $score = Score::Score($id_user,$etape->scenario_id);
-        if ($score->points < $points) {
-            $score->points = $points;
-            $score->save();
+            $id_user = auth::user()->id;
+            $score = Score::Score($id_user, $etape->scenario_id);
+            if ($score->points < $points) {
+                $score->points = $points;
+                $score->save();
+            }
         }
         return view('scenario/score',  compact('points'));
     }

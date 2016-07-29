@@ -13,7 +13,7 @@
 */
 
 // REST sans create store show et destroy
-Route::resource('user', 'UserController',  ['except' => ['create', 'store', 'show', 'destroy']]);
+Route::resource('user', 'UserController',  ['except' => ['show', 'destroy']]);
 
 //REST pour les cours sans show et destroy + ajout des accès au cours ainsi que des statistiques du cours
 Route::resource('cours', 'CoursController', ['except' => ['show', 'destroy']]);
