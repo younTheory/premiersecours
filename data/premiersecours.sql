@@ -1,9 +1,9 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.1.14
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 26 Juillet 2016 à 13:42
+-- Généré le :  Ven 29 Juillet 2016 à 05:18
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -79,10 +79,7 @@ INSERT INTO `cours_scenario` (`scenario_id`, `cours_id`, `active`) VALUES
 (1, 7, 0),
 (2, 7, 1),
 (1, 8, 0),
-(2, 8, 0),
-(3, 6, 1),
-(3, 5, 0),
-(3, 3, 0);
+(2, 8, 0);
 
 -- --------------------------------------------------------
 
@@ -145,10 +142,7 @@ INSERT INTO `etapes` (`id`, `text`, `reponse_positive`, `reponse_negative`, `poi
 (33, 'Que pouvez-vous faire pour que Bob se sent mieux à l''aise en attendant les secours ?', 'Oui, vous pouvez déboutonner sa chemise.', 'Non, il faut lui déboutonner sa chemise.', 1, 2, 53, 8, 2, 15),
 (34, 'Suite à ces gestes, les secours arrivent et Bob est sauvé. Quels sont les symptômes d’une crise cardiaque ? Cochez ce qui convient (plusieurs réponses possibles)', 'Oui, vous avez parfaitement trouvé les bons symptômes d''une crise cardiaque.', 'Non, vous avez fait des erreurs pour les symptômes d''une crise cardiaque!', 3, 2, 62, 9, 4, 20),
 (35, 'En effet, la crise cardiaque est provoquée par l’obstruction d’une artère, qui empêche le sang d’arriver au muscle du cœur (myocarde). Privées d’oxygène pendant plusieurs heures, des cellules meurent. Au-delà de 4 heures, la portion de tissu cardiaque menacée par le manque d’oxygène est irrémédiablement détruite. Il faut donc déboucher l’artère le plus rapidement possible. Dans la majorité des cas, I''infarctus du myocarde se révèle à travers les signes suivants :', '', '', 0, 2, 3, 10, 1, NULL),
-(36, 'Voici les symptômes de l''infarctus du myocarde :\r\n• Violente sensation d’oppression et douleur constrictive (serrement) au milieu de la poitrine, durant au moins 15 minutes, irradiant souvent dans les bras (surtout le gauche) et les épaules, le cou, le maxillaire inférieur et la partie supérieure de l’abdomen.\r\n• Nausée, sensation de faiblesse, sueurs, évt. peau froide et blafarde.\r\n• Sensation d’angoisse, difficultés à respirer.\r\n\r\nAttention: Chez les femmes, les diabétiques et les patients âgés, les symptômes suivants sont souvent les seuls signes d’alarme: difficultés à respirer, nausées inexplicables et vomissements, sensation de pression dans la poitrine, le dos ou l’abdomen.', '', '', 0, 2, 3, 11, 1, NULL),
-(37, 'Entre les deux joueurs qui a gagnée le plus de parties ?', 'Oui c''est lui.', 'Non ce n''est pas lui', 1, 3, 64, 1, 2, 15),
-(38, 'Entre les deux joueurs lequel est le plus agresif ?', 'Oui c''est Mickael.', 'Non ce n''est pas Fisher.', 1, 3, 66, 2, 2, 15),
-(39, 'Bravo vous avez réussi le scénario échec !', '', '', 0, 3, 54, 3, 1, NULL);
+(36, 'Voici les symptômes de l''infarctus du myocarde :\r\n• Violente sensation d’oppression et douleur constrictive (serrement) au milieu de la poitrine, durant au moins 15 minutes, irradiant souvent dans les bras (surtout le gauche) et les épaules, le cou, le maxillaire inférieur et la partie supérieure de l’abdomen.\r\n• Nausée, sensation de faiblesse, sueurs, évt. peau froide et blafarde.\r\n• Sensation d’angoisse, difficultés à respirer.\r\n\r\nAttention: Chez les femmes, les diabétiques et les patients âgés, les symptômes suivants sont souvent les seuls signes d’alarme: difficultés à respirer, nausées inexplicables et vomissements, sensation de pression dans la poitrine, le dos ou l’abdomen.', '', '', 0, 2, 3, 11, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -215,10 +209,7 @@ INSERT INTO `etape_image` (`etape_id`, `image_id`, `modification`) VALUES
 (32, 28, 1),
 (34, 30, 0),
 (35, 31, 0),
-(36, 31, 0),
-(37, 1, 0),
-(38, 2, 0),
-(39, 2, 0);
+(36, 31, 0);
 
 -- --------------------------------------------------------
 
@@ -459,11 +450,7 @@ INSERT INTO `reponses` (`id`, `reponse`, `etape_id`) VALUES
 (59, 'Essoufflements', 34),
 (60, 'Nausées.', 34),
 (61, 'Douleur irradiant souvent dans les bras (surtout le gauche) et les épaules, le cou, le maxillaire inférieur et la partie supérieure de l’abdomen.', 34),
-(62, '54,58,59,60,61', 0),
-(63, 'Karpov', 37),
-(64, 'Kasparov', 37),
-(65, 'Boby Fisher', 38),
-(66, 'Mickael Tall', 38);
+(62, '54,58,59,60,61', 0);
 
 -- --------------------------------------------------------
 
@@ -506,8 +493,7 @@ CREATE TABLE IF NOT EXISTS `scenarios` (
 
 INSERT INTO `scenarios` (`id`, `nom`, `nb_etape`, `pts_max`) VALUES
 (1, 'Arrêt cardiaque', 23, 20),
-(2, 'Crise cardiaque', 11, 7),
-(3, 'Échec ', 3, 2);
+(2, 'Crise cardiaque', 11, 7);
 
 -- --------------------------------------------------------
 
@@ -539,11 +525,7 @@ INSERT INTO `scores` (`id`, `scenarios_id`, `users_id`, `points`) VALUES
 (8, 1, 9, 11),
 (9, 2, 9, 7),
 (10, 1, 10, 15),
-(11, 2, 10, 0),
-(76, 3, 1, 2),
-(77, 3, 8, 0),
-(78, 3, 10, 0),
-(79, 3, 9, 0);
+(11, 2, 10, 0);
 
 -- --------------------------------------------------------
 

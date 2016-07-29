@@ -15,20 +15,20 @@ class ProfilController extends Controller
     {
         $this->middleware('auth');
     }
-
+    // permet d'afficher le profil
     public function index(){
         $user = auth::user();
         $scoreObtenu = Score::scoreByUser($user->id)->sum('points');
         $scoreMax = Scenario::MaxPoints();
         return view('profil/index', compact('user','scoreObtenu', 'scoreMax'));
     }
-
+    // permet de modier le profil
     public function edit(){
         $user = auth::user();
         $erreur = '';
         return view('profil/edit', compact('user', 'erreur'));
     }
-
+    // permet de sauvegarder le nouveau profil
     public function update(){
         $pass1 = \Request::input('pass1');
         //modification du mot de passe

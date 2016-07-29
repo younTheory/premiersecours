@@ -15,7 +15,7 @@ class ScoreController extends Controller
     {
         return strcmp($a->getScore(), $b->getScore());
     }
-
+    // permet d'afficher le classement des joueurs
     public function classement(){
         $users = user::where('active', '=', '1')->get();
         $scoreObtenu = array();
@@ -27,6 +27,7 @@ class ScoreController extends Controller
         return view('score/index', compact('lava', 'users', 'scoreMax'));
     }
 
+    // créer les statistique d'un joueur et les affiches
     public function index($id){
         $scenarios = Scenario::orderBy('id')->get();
         $nbScenarios = $scenarios->count();

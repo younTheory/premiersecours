@@ -18,7 +18,7 @@ class ScenarioController extends Controller
     {
         $this->middleware('auth');
     }
-
+    // retourne la liste des scénarios
     public function liste(){
         \Session::put('id_etape', 0);
 
@@ -72,7 +72,7 @@ class ScenarioController extends Controller
 
     }
 
-
+    // permet de gérer l'étape envoyé par post
     public function index(){
         $id_etape = \Request::input('etapes_id');
         $etape = Etape::findorFail($id_etape);
@@ -113,7 +113,7 @@ class ScenarioController extends Controller
     }
 
 
-
+    // permet de sauvegarder le score de l'utilisateur du scénario
     public function score(){
 
         $id_etape = \Session::get('id_etape');
@@ -136,7 +136,7 @@ class ScenarioController extends Controller
     }
 
 
-
+    // permet de vérifier la réponse de l'utilisateur et de le rediriger sur la bonne vue
     public function store(){
         $id_etape = \Request::input('etapes_id');
         $etape = Etape::findorFail($id_etape);

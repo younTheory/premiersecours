@@ -16,13 +16,13 @@ class ScenarioInviteController extends Controller
     {
         $this->middleware('invite');
     }
-
+    // affiche le nom du cours au participant
     public function cours(){
         $id_invite = auth()->guard('invites')->user()->id;
         $cours = Cours::where('invites_id', '=', $id_invite)->first();
         return view('invite/cours', compact('cours'));
     }
-
+    // retourne la liste des scénarios au participant
     public function liste(){
         \Session::put('id_etape', 0);
         $id_invite = auth()->guard('invites')->user()->id;
@@ -36,6 +36,11 @@ class ScenarioInviteController extends Controller
         return view('invite/scenario/scenarios', compact('scenarios', 'etapes'));
     }
 
+    // Permet de vérifier que la valeur post envoyée par l'utilisateur n'a pas été modifiée
+    // Paramètre $étape : correspond à l'étape que l'utilisateur tente d'accéder
+    // Retourne 0 : si l'étape n'a pas été modifiée.
+    // Retourne 1 : si l'utilisateur a changé le paramètre post après la première étape.
+    // Retourne 2: si l'utilisateur a changé le paramètre post avant d'arriver sur la première étape.
     public function verifyPost($etape)
     {
         $id_last_etape = \Session::get('id_etape');
@@ -57,7 +62,7 @@ class ScenarioInviteController extends Controller
         }
         return 0;
     }
-
+    // permet d'afficher la bonne étape au participant
     public function index(){
         $id_etape = \Request::input('etapes_id');
         $etape = Etape::findorFail($id_etape);
@@ -95,7 +100,7 @@ class ScenarioInviteController extends Controller
     }
 
 
-
+    // sauvegarde le score du participant
     public function score(){
 
         $id_etape = \Session::get('id_etape');
@@ -124,7 +129,7 @@ class ScenarioInviteController extends Controller
         return view('invite/index', compact('nom'));
     }
 
-
+    // vérifie la réponse envoyée par le participant
     public function store(){
 
         $id_etape = \Request::input('etapes_id');

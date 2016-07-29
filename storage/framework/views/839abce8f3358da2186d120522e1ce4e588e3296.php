@@ -11,12 +11,6 @@
     <?php /*scénario 2*/ ?>
     <div id="scenario2"></div>
     <?php echo Lava::render('DonutChart', 'Scenario2', 'scenario2'); ?>
-    <?php /* scénario 3*/ ?>
-    <div id="scenario3"></div>
-    <?php echo Lava::render('DonutChart', 'Scenario3', 'scenario3'); ?>
-    <?php /*scénario 4*/ ?>
-    <div id="scenario4"></div>
-    <?php echo Lava::render('DonutChart', 'Scenario4', 'scenario4'); ?>
 
 
 

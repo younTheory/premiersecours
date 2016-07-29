@@ -15,17 +15,21 @@ class UserController extends Controller
         $this->middleware('admin');
     }
 
+    // liste tous les utilisateurs
     public function index(){
 
         $users = User::get();
         return view('users/index', compact('users'));
     }
 
+    // permet de modifier un utilisateur
     public function edit($id){
         $user = User::findOrFail($id);
         $roles = Role::lists('role', 'id');
         return view('users/edit', compact('user', 'roles'));
     }
+
+    // créer un utilisateur
     public function store(){
         $pass1 = \Request::input('pass1');
         $pass2 = \Request::input('pass2');
@@ -45,11 +49,15 @@ class UserController extends Controller
         }
         return view('users/success', compact('nom'));
     }
+
+    // permet de créer un utilisateur
     public function create(){
         $roles = Role::lists('role', 'id');
         $erreur = "";
         return view('users/create', compact('roles', 'erreur'));
     }
+
+    // permet de sauvegarder un utilisateur
     public function update($id){
 
         $user = User::findOrFail($id);

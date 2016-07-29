@@ -20,6 +20,8 @@ class CoursController extends Controller
         $this->middleware('moniteur');
     }
 
+
+    // permet de lister tous les cours du moniteur / admin
     public function index(){
 
         $id_user = auth::user()->id;
@@ -32,14 +34,14 @@ class CoursController extends Controller
         return view('cours/index', compact('cours'));
     }
 
-
+    // permet de retourner la vue permettant de créer un cours
     public function create(){
         $erreur = '';
         return view('cours/create', compact('erreur'));
     }
 
 
-
+    // permet de lister les accès du cours au scénario
     public function acces($id){
 
         $cours = Cours::findorFail($id);
@@ -72,7 +74,7 @@ class CoursController extends Controller
     }
 
 
-
+    // permet de sauvegarder l'accès du cours au scénario
     public function storeAcces($id){
         $cours = Cours::findorFail($id);
         // test si c'est bien la bonne personne qui modifie le cours
@@ -91,7 +93,7 @@ class CoursController extends Controller
 
     }
 
-
+    // permet d'afficher le statistiques du cours
     public function statistique($id){
         $cours = Cours::findorFail($id);
         // test si c'est bien la bonne personne qui accède au statistique
@@ -141,7 +143,7 @@ class CoursController extends Controller
 
     }
 
-
+    // permet de créer un nouveau cours
     public function store(){
 
         $pass1 = \Request::input('pass1');
@@ -171,6 +173,7 @@ class CoursController extends Controller
         return view('cours/success');
     }
 
+    // permet d'éditer un cours
     public function edit($id){
         $cour = Cours::findOrFail($id);
         // test si c'est bien la bonne personne qui modifie le cours
@@ -184,6 +187,7 @@ class CoursController extends Controller
         return view('cours/edit', compact('cour','etat', 'erreur'));
     }
 
+    // permet de sauvegarder un cours éditer
     public function update($id)
     {
         $cours = Cours::findOrFail($id);

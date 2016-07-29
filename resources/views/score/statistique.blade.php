@@ -12,12 +12,6 @@
     {{--scénario 2--}}
     <div id="scenario2"></div>
     @donutchart('Scenario2', 'scenario2')
-    {{-- scénario 3--}}
-    <div id="scenario3"></div>
-    @donutchart('Scenario3', 'scenario3')
-    {{--scénario 4--}}
-    <div id="scenario4"></div>
-    @donutchart('Scenario4', 'scenario4')
 
 
 

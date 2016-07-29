@@ -60,7 +60,7 @@ Puis aller dans phpmyadmin et créez une base de données premiersecours avec la
 
 CREATE DATABASE premiersecours;
 
-Puis importer ce fichier sql 
+Puis importer ce fichier https://github.com/younTheory/premiersecours/blob/master/data/premiersecours.sql dans la base de données premiersecours.  
 
 
 ## Accéder au site
@@ -69,7 +69,7 @@ Ouvrez votre navigateur et aller sur http://localhost:8080/premiersecour/public 
 
 
 ## Connexion avec un compte administrateur :
-Vous pouvez vous connecter avec ce compte administateur
+Vous pouvez vous connecter avec ce compte administateur :
 
 Email: yannick.widmer92@gmail.com 
 
