@@ -65,7 +65,7 @@ Puis importer ce fichier https://github.com/younTheory/premiersecours/blob/maste
 
 ## Accéder au site
 
-Ouvrez votre navigateur et aller sur http://localhost:8080/premiersecour/public ou http://localhost/premiersecour/public selon le navigateur. Vous pouvez maintenant tester le Serious Game. 
+Ouvrez votre navigateur et aller sur http://localhost:8080/premiersecours/public ou http://localhost/premiersecours/public selon le navigateur. Vous pouvez maintenant tester le Serious Game. 
 
 
 ## Connexion avec un compte administrateur :
